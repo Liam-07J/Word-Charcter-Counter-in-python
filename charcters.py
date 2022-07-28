@@ -16,7 +16,10 @@ for chars in chars:
         chars_counts[chars] = 1
 print(chars_counts)
 
-#write this to a txt file 
+# order the file by the number of times each chars appears
+chars_counts_sorted = sorted(chars_counts.items(), key=lambda x: x[1], reverse=True)
+
+#write this to a txt file
 with open('chars_counts.txt', 'w') as f:
-    for chars in chars_counts:
-        f.write(chars + ' ' + str(chars_counts[chars]) + '\n')    
+    for chars in chars_counts_sorted:
+        f.write(chars[0] + ' ' + str(chars[1]) + '\n')   

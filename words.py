@@ -12,10 +12,11 @@ for word in words:
         word_counts[word] += 1
     else:
         word_counts[word] = 1
-print(word_counts)
 
-#write this to a txt file 
+# order the file by the number of times each word appears
+word_counts_sorted = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)
+
+#write this to a txt file
 with open('word_counts.txt', 'w') as f:
-    for word in word_counts:
-        f.write(word + ' ' + str(word_counts[word]) + '\n')
-        
+    for word in word_counts_sorted:
+        f.write(word[0] + ' ' + str(word[1]) + '\n')
