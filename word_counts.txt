@@ -1,0 +1,6 @@
+write 1
+your 1
+text 1
+here 1
+delete 1
+this 1
