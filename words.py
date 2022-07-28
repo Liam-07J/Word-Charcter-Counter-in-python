@@ -4,6 +4,7 @@ text = ''.join(lines)
 words = text.split()
 
 words = [word.lower() for word in words]
+words = [word.strip('!\"£$%^&*()_+-={}[]#~@/?.><,\|\'') for word in words]
 
 # convert words to a dictionary and count the number of times each word appears
 word_counts = {}
